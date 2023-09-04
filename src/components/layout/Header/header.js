@@ -166,7 +166,7 @@ function Topbar() {
             <span className={styles.container} style={{ marginRight: 15 }} >
               <Popover placement="bottomRight" title="Thông Báo" content={content} visible={visiblePopover} onVisibleChange={handleVisibleChange} trigger="click">
                 <Badge count={countNotification} >
-                  <Avatar style={{ backgroundColor: "#FFFFFF", marginLeft: 5, marginRight: 5, cursor: "pointer" }} icon={<BellOutlined style={{ fontSize: '18px', color: '#000000' }} />} />
+                  <Avatar style={{ backgroundColor: "#FFFFFF", marginLeft: 5, marginRight: -15, top: -2, cursor: "pointer" }} icon={<BellOutlined style={{ fontSize: '25px', color: '#000000' }} />} />
                 </Badge>
               </Popover>
             </span>

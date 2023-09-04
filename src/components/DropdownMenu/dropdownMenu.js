@@ -77,10 +77,11 @@ function DropdownAvatar() {
             className={styles.container}
           >
             <div style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
-              <div style={{ paddingRight: 10 }}>
+              <div style={{ paddingRight: 10}}>
                 <Avatar
                   style={{
                     outline: 'none',
+                    top: 1
                   }}
                   src={userData?.image ? userData.image : "https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"}
                 />

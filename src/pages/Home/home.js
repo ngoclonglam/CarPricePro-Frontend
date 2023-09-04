@@ -228,7 +228,7 @@ const Home = () => {
                                 <p>Năm Sản Xuất: {car.Nam_San_Xuat}</p>
                                 <p>Dòng Xe: {car.Dong_Xe}</p>
                                 <p>Hộp Số: {car.Hop_So}</p>
-                                <p>Dàn Động: {car.Dan_Dong}</p>
+                                <p>Dẫn Động: {car.Dan_Dong}</p>
                             </Card>
                         </Col>
                     ))}
