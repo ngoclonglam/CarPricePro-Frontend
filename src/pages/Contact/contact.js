@@ -29,7 +29,7 @@ const Contact = () => {
                 "role": "isClient",
                 "status": "actived"
             }
-            await axiosClient.post("http://localhost:3100/api/auth/register", formatData)
+            await axiosClient.post("https://carpricepro-be-32f4858056ba.herokuapp.com/api/auth/register", formatData)
                 .then(response => {
                     console.log(response);
                     if (response === "Email is exist") {
