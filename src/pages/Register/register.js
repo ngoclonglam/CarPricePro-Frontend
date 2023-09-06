@@ -28,7 +28,7 @@ const RegisterCustomer = () => {
                 "last_name": values.last_name,
                 "email": values.email,
             }
-            await axiosClient.post("http://localhost:8000/api/register/", formatData)
+            await axiosClient.post("https://carpricepro-fe-6941509725a9.herokuapp.com/api/register", formatData)
                 .then(response => {
                     console.log(response);
                     if (response === "Email is exist") {
