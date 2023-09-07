@@ -104,7 +104,7 @@ const Home = () => {
                         hop_so: values.hopSo === "Số tay" ? 0 : 1,
                     },
                 }).then((res) => {
-
+                    
                     // Xử lý kết quả từ API
                     const predictedPrice = res.predicted_price;
                     // Thực hiện các hành động khác với kết quả
@@ -116,23 +116,18 @@ const Home = () => {
 
                     form.resetFields();
 
-                })
-                .catch(error =>
-                {
-                    if(error.response){
-                        const predictedPrice = 'Dữ liệu nhập vào không trùng khớp với hệ thống của chúng tôi'
-                        setPredictedPrice(predictedPrice);
-                        setIsConfirmModalVisible(true);
-
-                        // Đóng modal
-                        setIsModalVisible(false);
-
-                        form.resetFields();
-                    }
                 });
 
             } catch (error) {
                 // Xử lý lỗi nếu có
+                const predictedPrice = 'Dữ liệu nhập vào không khớp với bộ dữ liệu'
+                setPredictedPrice(predictedPrice);
+                setIsConfirmModalVisible(true);
+
+                // Đóng modal
+                setIsModalVisible(false);
+
+                form.resetFields();
             }
         });
     };
