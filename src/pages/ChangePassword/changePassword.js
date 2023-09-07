@@ -6,6 +6,7 @@ import { Form, Input, Button, Divider, Alert, notification } from 'antd';
 import backgroundLogin from "../../assets/image/background-login.png";
 import { useParams } from "react-router-dom";
 import axiosClient from '../../apis/axiosClient';
+import { CloseOutlined } from '@ant-design/icons';
 
 const ChangePassWord = () => {
 
@@ -14,6 +15,9 @@ const ChangePassWord = () => {
 
     let history = useHistory();
     let { id } = useParams();
+    const handleRouter = (link) => {
+        history.push(link);
+    }
 
     const onFinish = async (values) => {
         const resetPassWord =
@@ -27,7 +31,7 @@ const ChangePassWord = () => {
                     notification["error"]({
                         message: `Thông báo`,
                         description:
-                            'Thay đổi mật khẩu thất bại',
+                            response.message,
 
                     });
                 }
@@ -35,9 +39,10 @@ const ChangePassWord = () => {
                     notification["success"]({
                         message: `Thông báo`,
                         description:
-                            'Thay đổi mật khẩu thành công',
+                            response.message,
 
                     });
+                    handleRouter("/home");
                 }
             })
             .catch(error => {
@@ -49,7 +54,7 @@ const ChangePassWord = () => {
     }, [])
 
     return (
-        <div className="imageBackground">
+        <div className="imageBackground" style={{zIndex: 1}}>
             <div id="formContainer" >
                 <div id="form-Login">
                     <div className="formContentLeft"
@@ -57,7 +62,7 @@ const ChangePassWord = () => {
                         <img className="formImg" src={backgroundLogin} alt='spaceship' />
                     </div>
                     <Form
-                        style={{ width: 340, marginBottom: 8 }}
+                        style={{ width: 340, marginBottom: 8}}
                         name="normal_login"
                         className="loginform"
                         initialValues={{
@@ -65,6 +70,11 @@ const ChangePassWord = () => {
                         }}
                         onFinish={onFinish}
                     >
+                        <Form.Item style={{marginLeft: 310, marginTop: -10}}>
+                            <Button className='button' onClick={() => handleRouter("/home")}>
+                                <CloseOutlined style={{marginLeft: -6, marginTop: -500}}/>
+                            </Button>
+                        </Form.Item>   
                         <Form.Item style={{ marginBottom: 20, marginTop: 65 }}>
                             <Divider style={{ marginBottom: 5, fontSize: 19 }} orientation="center">THAY ĐỔI MẬT KHẨU</Divider>
                         </Form.Item>
@@ -90,7 +100,7 @@ const ChangePassWord = () => {
                             ]}
                             hasFeedback
                         >
-                            <Input.Password placeholder="Mật khẩu cũ" />
+                            <Input.Password placeholder="Mật khẩu cũ" autoFocus />
                         </Form.Item>
 
                         <Form.Item
@@ -134,6 +144,7 @@ const ChangePassWord = () => {
                                 Thay đổi mật khẩu
                             </Button>
                         </Form.Item>
+                        
                     </Form>
                 </div>
             </div>
@@ -142,6 +153,3 @@ const ChangePassWord = () => {
 };
 
 export default ChangePassWord;
-
-
-

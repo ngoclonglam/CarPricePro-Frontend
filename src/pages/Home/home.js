@@ -292,6 +292,10 @@ const Home = () => {
                             <Option value="Toyota">Toyota</Option>
                             <Option value="Honda">Honda</Option>
                             <Option value="Ford">Ford</Option>
+                            <Option value="Tesla">Tesla</Option>
+                            <Option value="Civic">Civic</Option>
+                            <Option value="Kia">Kia</Option>
+                            <Option value="Hyundai">Hyundai</Option>
                             {/* Thêm các hãng xe khác tại đây */}
                         </Select>
                     </Form.Item>
