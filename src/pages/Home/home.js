@@ -116,6 +116,19 @@ const Home = () => {
 
                     form.resetFields();
 
+                })
+                .catch(error =>
+                {
+                    if(error.response){
+                        const predictedPrice = 'Dữ liệu nhập vào không trùng khớp với hệ thống của chúng tôi'
+                        setPredictedPrice(predictedPrice);
+                        setIsConfirmModalVisible(true);
+
+                        // Đóng modal
+                        setIsModalVisible(false);
+
+                        form.resetFields();
+                    }
                 });
 
             } catch (error) {
